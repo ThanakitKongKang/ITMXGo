@@ -23,6 +23,8 @@ func Init() error {
 		return err
 	}
 
+	InitData()
+
 	return err
 }
 
@@ -51,6 +53,29 @@ func ResetDB() error {
 	// Reset the auto-increment sequence
 	if err := DB.Exec("DELETE FROM sqlite_sequence WHERE name=?", "customers").Error; err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func InitData() error {
+	sampleData := []models.Customer{
+		{Name: "John Doe", Age: 30},
+		{Name: "Jane Smith", Age: 25},
+		{Name: "Alice Johnson", Age: 40},
+		{Name: "Bob Brown", Age: 35},
+		{Name: "Emma Davis", Age: 28},
+		{Name: "Michael Wilson", Age: 45},
+		{Name: "Olivia Taylor", Age: 33},
+		{Name: "William Martinez", Age: 39},
+		{Name: "Sophia Garcia", Age: 31},
+		{Name: "James Rodriguez", Age: 37},
+	}
+
+	for _, data := range sampleData {
+		if err := DB.Create(&data).Error; err != nil {
+			return err
+		}
 	}
 
 	return nil
