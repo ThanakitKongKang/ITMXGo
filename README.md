@@ -64,3 +64,5 @@ go test ./tests
 ```
 This command will run all tests in the project and display the results.
 
+![image](https://github.com/ThanakitKongKang/ITMXGo/assets/44811853/9012e1de-1a74-41b1-b557-1bba6b58d5eb)
+
