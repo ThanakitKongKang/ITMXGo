@@ -64,3 +64,5 @@ go test ./tests
 ```
 This command will run all tests in the project and display the results.
 
+## API Documentation
+Explore our API endpoints and test them using Postman. View the full API documentation [here](https://documenter.getpostman.com/view/5146303/2sA3BuWp7t).
